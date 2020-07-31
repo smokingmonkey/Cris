@@ -1,6 +1,6 @@
 <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 <style>
   .arjs-loader {
     height: 100%;
@@ -21,34 +21,46 @@
     color: white;
   }
 </style>
+<a-assets>
+ <video id="penguin-sledding" autoplay="true" loop="true" src="https://cdn.glitch.com/e614a6f8-f4ba-4733-8a7c-e61e5d59427e%2Fd55bddf8d62910879ed9f605522149a8.mp4?1551541382508"></video>
+ 
+        <!--<video id="penguin-sledding" autoplay="true" loop="true" src="https://cdn.glitch.com/942cf995-c0ab-40bd-8735-013e48d06089%2Fpenguin-sledding.mp4?v=1595600160190"></video>
+-->
+</a-assets>
 
 <body style="margin : 0px; overflow: hidden;">
+
   <!-- minimal loader shown until image descriptors are loaded -->
   <div class="arjs-loader">
     <div>Loading, please wait...</div>
   </div>
   <a-scene
+   
     vr-mode-ui="enabled: false;"
     renderer="logarithmicDepthBuffer: true;"
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
+    <!--
+    <a-cylinder position="1 0.75 -8" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+        <a-video src="#penguin-sledding" width="16" height="9" rotation="0 0 0" position="0 0 -85"></a-video>
+-->
+
+    <!--<a-video src="#penguin-sledding" width="16" height="9" rotation="45 0 0" position="0 0 -80"></a-video>
     <!-- we use cors proxy to avoid cross-origin problems -->
     <a-nft
       type="nft"
       url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex"
       smooth="true"
-      smoothCount="10"
-      smoothTolerance=".01"
-      smoothThreshold="5"
-    >
-      <a-entity
-        gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-        scale="5 5 5"
-        position="50 150 0"
-      >
-      </a-entity>
+      smoothcount="10"
+      smoothtolerance=".01"
+      smooththreshold="5"
+     >
+          <a-video src="#penguin-sledding" width="160" height="90" rotation="90 180 0" position="30 0 -80"></a-video>
+
     </a-nft>
+
     <a-entity camera></a-entity>
   </a-scene>
 </body>
